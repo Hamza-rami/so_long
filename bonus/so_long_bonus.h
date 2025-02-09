@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:11:23 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 12:27:44 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/08 23:32:36 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <fcntl.h>
 # include "read_file/get_next_line.h"
 # include "mlx/mlx.h"
+
+typedef struct s_enemy
+{
+    int x;
+    int y;
+    int dir;
+    struct s_enemy *next;
+} t_enemy;
 
 typedef struct s_game
 {
@@ -39,6 +47,7 @@ typedef struct s_game
 	void	*floor_img;
 	void	*enemai_img;
 	int		der;
+	t_enemy	*enemies;
 }	t_game;
 
 # define TILE_SIZE 64
@@ -65,5 +74,7 @@ int		close_win(t_game *game);
 char	*ft_itoa(int n);
 char	*der(int n);
 void	exit_no_img(t_game *game);
+void    store_enemy(t_game *game);
+void	move_enemie(t_game *game);
 
 #endif

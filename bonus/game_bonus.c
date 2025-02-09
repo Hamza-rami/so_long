@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:15:01 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 12:47:19 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/09 16:03:06 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int	key_press(int keycode, t_game *game)
 {
 	if (keycode == 65307)
 		exit_game(game);
+	move_enemie(game);
 	if (keycode == 119 || keycode == 65362)
 	{
 		game->der = 1;

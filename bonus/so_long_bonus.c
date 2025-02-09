@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 19:52:03 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 12:23:01 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/09 16:03:00 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	help(t_game *game)
 		exit(1);
 	}
 	load_images(game);
+	store_enemy(game);
 	draw_map(game);
 	mlx_key_hook(game->win, key_press, game);
 	mlx_hook(game->win, 17, 0, close_win, game);
