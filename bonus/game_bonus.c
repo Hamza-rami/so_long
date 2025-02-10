@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:15:01 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/09 16:03:06 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/09 19:02:18 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	move_player(t_game *game, int dx, int dy)
 
 	new_x = game->player_x + dx;
 	new_y = game->player_y + dy;
+	move_enemie(game);
 	if (game->map[new_y][new_x] != '1')
 	{
 		if (game->map[new_y][new_x] == 'C')
@@ -86,7 +87,6 @@ int	key_press(int keycode, t_game *game)
 {
 	if (keycode == 65307)
 		exit_game(game);
-	move_enemie(game);
 	if (keycode == 119 || keycode == 65362)
 	{
 		game->der = 1;

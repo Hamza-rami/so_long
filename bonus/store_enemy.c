@@ -9,7 +9,6 @@ t_enemy *new_enemy(int x, int y)
         return (NULL);
     enemy->x = x;
     enemy->y = y;
-    enemy->dir = 4;
     enemy->next = NULL;
     return (enemy);
 }

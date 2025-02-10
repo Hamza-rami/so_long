@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:11:23 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/08 23:32:36 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/09 18:42:49 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_enemy
 {
     int x;
     int y;
-    int dir;
     struct s_enemy *next;
 } t_enemy;
 
