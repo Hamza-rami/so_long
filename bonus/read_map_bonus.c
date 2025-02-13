@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:16:11 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 12:44:28 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/10 13:03:58 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	help_draw_map(int i, int j, t_game *game)
 		mlx_destroy_image(game->mlx, game->player_img);
 	game->player_img = mlx_xpm_file_to_image(game->mlx,
 			der(game->der), &img_width, &img_height);
+	if (!game->player_img)
+		exit_no_img(game);
 	if (game->map[i][j] == '1')
 		draw_wall(column, row, game);
 	if (game->map[i][j] == 'P')

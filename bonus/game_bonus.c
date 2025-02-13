@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:15:01 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/09 19:02:18 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/13 09:03:08 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	move_player(t_game *game, int dx, int dy)
 
 	new_x = game->player_x + dx;
 	new_y = game->player_y + dy;
-	move_enemie(game);
 	if (game->map[new_y][new_x] != '1')
 	{
 		if (game->map[new_y][new_x] == 'C')
@@ -120,10 +119,13 @@ void	exit_game(t_game *game)
 		free(game->map[i]);
 		i++;
 	}
+	claer_list(game);
 	free(game->map);
 	mlx_destroy_image(game->mlx, game->wall_img);
 	mlx_destroy_image(game->mlx, game->player_img);
-	mlx_destroy_image(game->mlx, game->collectible_img);
+	mlx_destroy_image(game->mlx, game->collectible_img[0]);
+	mlx_destroy_image(game->mlx, game->collectible_img[1]);
+	mlx_destroy_image(game->mlx, game->collectible_img[2]);
 	mlx_destroy_image(game->mlx, game->exit_img);
 	mlx_destroy_image(game->mlx, game->floor_img);
 	mlx_destroy_image(game->mlx, game->enemai_img);

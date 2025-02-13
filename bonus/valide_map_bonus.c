@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:07:46 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 12:25:41 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/13 12:15:16 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,15 +112,21 @@ void	load_images(t_game *game)
 
 	game->wall_img = mlx_xpm_file_to_image(game->mlx,
 			"photo/ibenmain.xpm", &img_width, &img_height);
-	game->collectible_img = mlx_xpm_file_to_image(game->mlx,
-			"photo/ball.xpm", &img_width, &img_height);
+	game->collectible_img[0] = mlx_xpm_file_to_image(game->mlx,
+			"photo/ll.xpm", &img_width, &img_height);
+	game->collectible_img[1] = mlx_xpm_file_to_image(game->mlx,
+			"photo/meduim.xpm", &img_width, &img_height);
+	game->collectible_img[2] = mlx_xpm_file_to_image(game->mlx,
+			"photo/big.xpm", &img_width, &img_height);
+	game->heart_frame = 0;
 	game->exit_img = mlx_xpm_file_to_image(game->mlx,
 			"photo/smazouz.xpm", &img_width, &img_height);
 	game->floor_img = mlx_xpm_file_to_image(game->mlx,
 			"photo/black.xpm", &img_width, &img_height);
 	game->enemai_img = mlx_xpm_file_to_image(game->mlx,
 			"photo/anemei.xpm", &img_width, &img_height);
-	if (!game->wall_img || !game->collectible_img || !game->exit_img
-		|| !game->floor_img || !game->enemai_img)
+	if (!game->wall_img || !game->collectible_img[0]
+		|| !game->collectible_img[1] || !game->collectible_img[2]
+		|| !game->exit_img || !game->floor_img || !game->enemai_img)
 		exit_no_img(game);
 }

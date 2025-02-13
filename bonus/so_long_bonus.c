@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 19:52:03 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/09 16:03:00 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/13 12:31:24 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	help_free(t_game *game)
 void	help(t_game *game)
 {
 	game->win = mlx_new_window(game->mlx, game->window_width,
-			game->window_height, "my_game");
+			game->window_height, "so long");
 	if (!game->win)
 	{
 		mlx_destroy_display(game->mlx);
@@ -49,6 +49,7 @@ void	help(t_game *game)
 	load_images(game);
 	store_enemy(game);
 	draw_map(game);
+	mlx_loop_hook(game->mlx, loop_game, game);
 	mlx_key_hook(game->win, key_press, game);
 	mlx_hook(game->win, 17, 0, close_win, game);
 	mlx_loop(game->mlx);

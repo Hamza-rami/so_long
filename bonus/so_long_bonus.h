@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:11:23 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/09 18:42:49 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/13 10:15:43 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 
 typedef struct s_enemy
 {
-    int x;
-    int y;
-    struct s_enemy *next;
-} t_enemy;
+	int				x;
+	int				y;
+	struct s_enemy	*next;
+}	t_enemy;
 
 typedef struct s_game
 {
@@ -41,7 +41,8 @@ typedef struct s_game
 	int		move_count;
 	void	*wall_img;
 	void	*player_img;
-	void	*collectible_img;
+	void	*collectible_img[3];
+	int		heart_frame;
 	void	*exit_img;
 	void	*floor_img;
 	void	*enemai_img;
@@ -73,7 +74,11 @@ int		close_win(t_game *game);
 char	*ft_itoa(int n);
 char	*der(int n);
 void	exit_no_img(t_game *game);
-void    store_enemy(t_game *game);
+void	store_enemy(t_game *game);
 void	move_enemie(t_game *game);
+void	update_enemies(t_game *game);
+void	claer_list(t_game *game);
+void	animate_heart(t_game *game);
+int		loop_game(t_game *game);
 
 #endif
