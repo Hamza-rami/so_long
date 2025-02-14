@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:20:07 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/13 09:02:19 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/13 22:55:28 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	draw_enemei(int column, int row, t_game *game)
 char	*der(int n)
 {
 	if (n == 1)
-		return ("photo/up.xpm");
+		return ("textures/up.xpm");
 	else if (n == 2)
-		return ("photo/down.xpm");
+		return ("textures/down.xpm");
 	else if (n == 3)
-		return ("photo/left.xpm");
+		return ("textures/left.xpm");
 	else if (n == 4)
-		return ("photo/right.xpm");
-	return ("photo/right.xpm");
+		return ("textures/right.xpm");
+	return ("textures/right.xpm");
 }
 
 void	help_exit_no_img(t_game *game)

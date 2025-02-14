@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:11:23 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 11:25:42 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/14 13:02:19 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 # define SO_LONG_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <fcntl.h>
 # include "get_file/get_next_line.h"
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
 
 typedef struct s_game
 {

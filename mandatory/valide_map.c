@@ -6,7 +6,7 @@
 /*   By: hrami <hrami@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:07:46 by hrami             #+#    #+#             */
-/*   Updated: 2025/02/07 11:23:49 by hrami            ###   ########.fr       */
+/*   Updated: 2025/02/14 12:20:02 by hrami            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,13 +111,13 @@ void	load_images(t_game *game)
 	int	img_height;
 
 	game->wall_img = mlx_xpm_file_to_image(game->mlx,
-			"photo/ibenmain.xpm", &img_width, &img_height);
+			"textures/ibenmain.xpm", &img_width, &img_height);
 	game->collectible_img = mlx_xpm_file_to_image(game->mlx,
-			"photo/ball.xpm", &img_width, &img_height);
+			"textures/ll.xpm", &img_width, &img_height);
 	game->exit_img = mlx_xpm_file_to_image(game->mlx,
-			"photo/smazouz.xpm", &img_width, &img_height);
+			"textures/smazouz.xpm", &img_width, &img_height);
 	game->floor_img = mlx_xpm_file_to_image(game->mlx,
-			"photo/black.xpm", &img_width, &img_height);
+			"textures/black.xpm", &img_width, &img_height);
 	if (!game->wall_img || !game->collectible_img || !game->exit_img
 		|| !game->floor_img)
 		exit_no_img(game);
